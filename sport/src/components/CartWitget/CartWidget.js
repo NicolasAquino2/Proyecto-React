@@ -4,9 +4,8 @@ const CartWidget = () => {
   return (
 
       <div className="text-white">
-          <button className="boton">
+          <button className="btn btn-dark">
               <AiOutlineShoppingCart/>
-              <p className="text-base text-center"> 0 </p>
           </button>
 
       </div>

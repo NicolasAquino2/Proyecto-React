@@ -1,34 +1,39 @@
 import CartWidget from "./CartWitget/CartWidget"
+
 const Navbar = () => {
     return (
     
         
-        <nav class="navbar navbar-expand-lg bg-light">
-          <CartWidget/>
-        <div class="container-fluid">
+        <nav className="navbar navbar-expand-lg">
+
+         <h2 style={{padding: 30}} >Sport</h2>
+         
+        <div className="container-fluid">
 
         
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          
            
-           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">inicio</a>
+           <ul className="navbar-nav mx-auto">
+              <li className="nav-item">
+                <a className="nav-link active" aria-current="page" href="index.html">inicio</a>
 
                </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Urbanas</a>
+              <li className="nav-item">
+                <a className="nav-link" href="#">Urbanas</a>
              
                </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Deportivas</a>
+              <li className="nav-item">
+                <a className="nav-link" href="#">Deportivas</a>
               </li>
 
-               <li class="nav-item">
-                 <a class="nav-link" href="tickets.html">Botas de Futbol</a>
+               <li className="nav-item">
+                 <a className="nav-link" href="#">Botas de Futbol</a>
                </li>
-               
+               <CartWidget/>
            </ul>
-
+           
+           
           </div>
 
         </div>
