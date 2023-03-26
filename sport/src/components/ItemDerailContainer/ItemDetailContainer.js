@@ -6,7 +6,7 @@ const ItemDetailContainer = () => {
     const [product, setProduct] = useState()
 
     const { itemId } = useParams()
-
+console.log(itemId)
 
 
     useEffect(() => {
@@ -16,7 +16,7 @@ const ItemDetailContainer = () => {
          console.log(error)
         })
     }, [itemId])
-
+console.log(itemId)
 
     return(
         <div >

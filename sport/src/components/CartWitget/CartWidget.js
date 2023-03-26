@@ -4,10 +4,11 @@ const CartWidget = () => {
   return (
 
       <div className="text-white">
-          <button className="btn btn-dark">
+          <button className="btn btn-dark ">
               <AiOutlineShoppingCart/>
+              0
           </button>
-
+        
       </div>
   )
 }
