@@ -1,0 +1,24 @@
+.CardItem {
+    
+    width: 400px;
+    padding: 25px;
+    margin: 25px;
+    font-size: 13px;
+    background-color: #005A5B;
+
+    border-radius: 10px;
+}
+
+.boton{
+    width: auto;
+    padding: 12px;
+    font-size: 13px;
+    background: #818274 ;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #FFFFFF;
+    border: none;
+    border-style: none;
+    cursor: pointer;
+    outline: inherit;
+}

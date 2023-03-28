@@ -12,9 +12,9 @@ const Navbar = () => {
          
          <CartWidget/>
          <div className="Categories">
-            <Link to='/category/urbanas' className='Option'>Urbanas</Link>
-            <Link to='/category/deportivas' className='Option'>Urbanas</Link>
-            <Link to='/category/botasdefutbol' className='Option'>Urbanas</Link>
+            <NavLink to='/category/Urbanas' className='Option'>Urbanas</NavLink>
+            <NavLink to='/category/Deportivas' className='Option'>Deportivas</NavLink>
+            <NavLink to='/category/Futbol' className='Option'>Futbol</NavLink>
         </div>
        
            

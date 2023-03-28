@@ -1,34 +1,22 @@
-.Categories {
+.Counter {
     display: flex;
-    justify-content: space-around;
-    flex: auto;
-   
-  }
-
-  .NavBar {
-    display: flex;
-    background:#00374091;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    height: 60px;
-   
-  }
+    width: 300px;
+    margin: auto;
+}
 
-    
-  .Option {
-    /* color: #8C30F5; */
+.Button {
     text-decoration: none;
     border-radius: 25;
-    margin: 0 50px;
-    /* TODO */
+    margin: 0 30px;
     width: auto;
     padding: 12px;
-    font-size: 12px;
-    background: #005A5B;
+    font-size: 8px;
+    background: #818274;
     border-radius: 8px;
-    flex: none;
     display: flex;
-    order: 1;
     align-self: center;
     flex-grow: 0;
     justify-content: center;
@@ -39,10 +27,17 @@
     border-style: none;
     cursor: pointer;
     outline: inherit;
-  }
-  
+    font-size: larger;
+}
 
-  
-  .NavLink {
-    color :#008C72
-  }
+.Number {
+    font-size: 20px;
+    padding: 20px;
+    margin: 0;
+    
+}
+
+.Controls {
+    display: flex;
+    justify-content: center;
+}

@@ -3,7 +3,7 @@ import './App.css';
 import ItemDetailConteiner from './components/ItemDerailContainer/ItemDetailContainer';
 import ItemListConteiner from './components/ItemListConteiner/ItemListConteiner';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Navbar from './components/navbar/navbar';
+import Navbar from './components/Navbar/Navbar';
 
 function App() {
   return (

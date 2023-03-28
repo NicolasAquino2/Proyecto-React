@@ -1,32 +1,47 @@
-import Item from '../Item/Item'
-import ItemList from '../ItemList/ItemList'
+import './ItemDetail.css'
+import ItemCount from '../ItemCount/ItemCount'
+export const ItemDetail = ({detalle}) => {
 
-const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
-    
-    return (
-        <article>
-            <header>
-                <h2 >
+    const  {id,name,category,description,price,img,stock} =detalle 
+
+    const handleOnAdd = (quantity) => {
+        const productToAdd = {
+            id, name, price, quantity
+        }
+        console.log(productToAdd)
+    }
+  
+   return (
+
+    <div className='d-inline-flex'>
+      <article className="Card" key={id} >
+            
+            <header className="Header" >
+                <h2 className="ItemHeader" >
                     {name}
                 </h2>
             </header>
             <picture>
-                <img src={img} alt={name}/>
+                <img src={img} alt={name} className='imagen'/>
             </picture>
             <section>
-                <p >
+                <p className="Info">
                     Categoria: {category}
                 </p>
-                <p >
+                <p className="Info">
                     Descripción: {description}
                 </p>
-                <p>
+                <p className="Info">
                     Precio: {price}
                 </p>
-            </section>  
+            </section> 
+            <footer className='ItemFooter'>
+                <ItemCount onAdd={handleOnAdd} stock={stock} />
+            </footer>        
             
-        </article>
-    )
+    </article>
+    </div>
+  )
 }
 
-export default ItemDetail
+

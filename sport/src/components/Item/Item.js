@@ -1,19 +1,20 @@
 import React from 'react'
-
+import './Item.css'
 import { useNavigate } from 'react-router-dom'
 
-function Item({id, name, img, price,}) {
+function Item(product) {
 
+  const {id, name, img, price} = product;
   const navigate = useNavigate()
   return (
     
-     <div>
+     <div className='CardItem' >
        
            <img src={img} alt={name} style={{width: 300}}/>
                              
              <h3  >{name} </h3>
              <p>Precio: ${price}</p>
-             <button onClick={() => navigate(`/item/${id}`)} className='btn btn-primary'>Ver detalle</button>
+             <button onClick={() => navigate(`/item/${id}`)} className='boton'>Ver detalle</button>
              
     </div>   
   )

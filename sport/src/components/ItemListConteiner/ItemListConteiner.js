@@ -6,10 +6,11 @@ import { useParams } from "react-router-dom"
 function ItemListConteiner({greeting}) {
   const [products, setProducts ] = useState ([0])
 
-const {categoryId} = useParams
+const {categoryId}= useParams();
 
 
   useEffect(() => {
+
 
     const asyncFunction = categoryId ? getProductsByCategory : getProducts
 
@@ -18,16 +19,13 @@ const {categoryId} = useParams
       setProducts(products)
     })
   }, [categoryId])
-  
-
-
 
 
 
   return (
     <div >
        <h1>{greeting}</h1>
-       <ItemList products={products}/>
+       <ItemList products={products} />
     </div>
   )
 }
