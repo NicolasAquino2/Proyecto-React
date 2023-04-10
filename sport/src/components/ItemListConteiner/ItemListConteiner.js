@@ -23,7 +23,7 @@ const {categoryId}= useParams();
 
 
   return (
-    <div >
+    <div  onClick={(e) => console.log('item list container')}>
        <h1>{greeting}</h1>
        <ItemList products={products} />
     </div>

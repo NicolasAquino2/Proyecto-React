@@ -8,7 +8,7 @@ const Navbar = () => {
         
       <nav className="NavBar">
 
-         <h2 style={{padding: 30}} >Sport</h2>
+         <Link to={'/'} style={{padding: 30}} >Sport</Link>
          
          <CartWidget/>
          <div className="Categories">

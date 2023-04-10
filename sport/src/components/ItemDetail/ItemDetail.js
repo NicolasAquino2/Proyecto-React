@@ -1,14 +1,17 @@
 import './ItemDetail.css'
 import ItemCount from '../ItemCount/ItemCount'
+import { useCart } from '../../context/CartContext' 
 export const ItemDetail = ({detalle}) => {
 
-    const  {id,name,category,description,price,img,stock} =detalle 
+    const  {id,name,category,description,price,img,stock} = detalle 
+
+    const {addItem} = useCart()
 
     const handleOnAdd = (quantity) => {
         const productToAdd = {
             id, name, price, quantity
         }
-        console.log(productToAdd)
+        addItem( prev =>  [...prev, productToAdd])
     }
   
    return (

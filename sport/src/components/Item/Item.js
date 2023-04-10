@@ -4,11 +4,17 @@ import { useNavigate } from 'react-router-dom'
 
 function Item(product) {
 
+  const handleClick = (e) => {
+    e.preventDefault()
+    e.stopPropagation()
+    console.log('item')
+  }
+
   const {id, name, img, price} = product;
   const navigate = useNavigate()
   return (
     
-     <div className='CardItem' >
+     <div className='CardItem' onClick={handleClick } >
        
            <img src={img} alt={name} style={{width: 300}}/>
                              
