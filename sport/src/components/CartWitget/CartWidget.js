@@ -6,11 +6,11 @@ import { useCart } from "../../context/CartContext";
 const CartWidget = () => {
 
   const { getQuantity } = useCart()
-
+  
   return(
       <div to='/cart' className="CartWidget">
           <img src={cart} alt='cart-widget' className='CartImg'/>
-          {getQuantity}
+          {getQuantity()}
          
       </div>
        

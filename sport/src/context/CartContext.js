@@ -4,19 +4,24 @@ const CartContext = createContext('valor inicial')
 
 export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([])
-    console.log(cart)
+    
 
-    const addItem = (productToAdd) => {
-        if(!isInCart(productToAdd.id)) {
-            setCart(prev => [...prev, productToAdd])
-        } else {
-            console.log('No se agrega porque ya esta en el carrito')
+    const addItem =(detalle, quantity) =>{
+        if(isInCart(detalle.id)){
+          setCart (cart.map(product =>{
+            return product.id === detalle.id ?{...product,quantity : product.quantity + quantity} : product
+          }));
+    
+        }else{   setCart ([...cart,{...detalle,quantity}]);
+          
+         
         }
-    }
+      }
 
-    const isInCart = (id) => {
+      const isInCart = (id) => {
         return cart.some(prod => prod.id === id)
     }
+      
 
     const removeItem = (id) => {
         const updatedCart = cart.filter(prod => prod.id !== id)
@@ -36,7 +41,7 @@ export const CartProvider = ({ children }) => {
             { children }
         </CartContext.Provider>
     )
-    
+    console.log()
 }
 
 export const useCart = () => {

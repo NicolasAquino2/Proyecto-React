@@ -7,11 +7,9 @@ export const ItemDetail = ({detalle}) => {
 
     const {addItem} = useCart()
 
-    const handleOnAdd = (quantity) => {
-        const productToAdd = {
-            id, name, price, quantity
-        }
-        addItem( prev =>  [...prev, productToAdd])
+   const handleOnAdd = (quantity) => {
+        
+        addItem(detalle,quantity)
     }
   
    return (
