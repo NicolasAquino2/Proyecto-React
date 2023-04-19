@@ -1,20 +1,26 @@
 import './ItemDetail.css'
 import ItemCount from '../ItemCount/ItemCount'
-import { useCart } from '../../context/CartContext' 
+import { useCart } from '../../Context/CartContext' 
+import { useNotification } from '../../Notification/Notification'
+import { Link } from 'react-router-dom'
 export const ItemDetail = ({detalle}) => {
-
+    const { addItem, isInCart} = useCart()
     const  {id,name,category,description,price,img,stock} = detalle 
 
-    const {addItem} = useCart()
+   
+     const { setNotification } = useNotification()
 
    const handleOnAdd = (quantity) => {
         
         addItem(detalle,quantity)
+        setNotification ('success',  `Se agrego correctamente ${quantity} ${name}`)
     }
+
+
   
    return (
 
-    <div className='d-inline-flex'>
+    <div className='d-flex justify-content-center'>
       <article className="Card" key={id} >
             
             <header className="Header" >
@@ -37,7 +43,14 @@ export const ItemDetail = ({detalle}) => {
                 </p>
             </section> 
             <footer className='ItemFooter'>
-                <ItemCount onAdd={handleOnAdd} stock={stock} />
+            {
+                    isInCart(id) ? (
+                        <Link className='boton' to='/cart'>Terminar compra</Link>
+                    ) : (
+                        <ItemCount onAdd={handleOnAdd} stock={stock}/>
+                    )
+                }
+               
             </footer>        
             
     </article>

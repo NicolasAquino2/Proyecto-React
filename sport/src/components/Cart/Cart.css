@@ -1,24 +1,22 @@
-.Categories {
-    display: flex;
-    justify-content: space-around;
-    flex: auto;
-   
-  }
+.style {padding: 12px;
+font-size: 22px;
+background: #005a5b6c;
+font-family: monospace;
 
-  .NavBar {
-    display: flex;
-    background:#00374091;
-    justify-content: space-around;
-    align-items: center;
-    height: 60px;
-   
-  }
+}
 
-    
-  .Option {
+.total{
+        text-align: center;
+        font-family: monospace;
+        background: #005a5b63;
+        border-radius: 15px;
+        margin: 0 90px 10px;
+}
+
+.botonCheck{
     text-decoration: none;
     border-radius: 25;
-    margin: 0 50px;
+    margin: 0 400px;
     width: auto;
     padding: 12px;
     font-size: 12px;
@@ -37,10 +35,11 @@
     border-style: none;
     cursor: pointer;
     outline: inherit;
-  }
-  
+}
 
-  
-  .NavLink {
-    color :#008C72
-  }
+
+.titulo{
+        text-align: center;
+        font-family: monospace;
+
+}

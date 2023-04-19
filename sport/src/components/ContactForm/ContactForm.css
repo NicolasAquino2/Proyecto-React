@@ -1,21 +1,11 @@
-.Categories {
+.form{
     display: flex;
-    justify-content: space-around;
-    flex: auto;
-   
-  }
+    text-align: center;
+    place-content: center;
+    font-size: 22px;
+}
 
-  .NavBar {
-    display: flex;
-    background:#00374091;
-    justify-content: space-around;
-    align-items: center;
-    height: 60px;
-   
-  }
-
-    
-  .Option {
+.orden{
     text-decoration: none;
     border-radius: 25;
     margin: 0 50px;
@@ -37,10 +27,4 @@
     border-style: none;
     cursor: pointer;
     outline: inherit;
-  }
-  
-
-  
-  .NavLink {
-    color :#008C72
-  }
+}
