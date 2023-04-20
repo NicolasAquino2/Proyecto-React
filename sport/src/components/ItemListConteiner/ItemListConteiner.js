@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react"
 import ItemList from "../ItemList/ItemList"
 import { useParams } from "react-router-dom"
-import { getDocs, collection, query, where} from "firebase/firestore"
-import { db } from "../../service/firebase/fireconfig"
+import { getProducts } from "../../service/firebase/firestore/products"
 
 
 function ItemListConteiner({greeting}) {
@@ -12,28 +11,47 @@ const {categoryId}= useParams();
 
 
   useEffect(() => {
+
 setLoading(true)
 
-const productsRef = categoryId 
-                    ? query (collection(db, 'products'), where('category', '==', categoryId))
-                    : collection(db, 'products')
 
-getDocs(productsRef) 
-  .then(snapshot => {
-    console.log(snapshot)
-    const productsAdapted = snapshot.docs.map(doc =>{
-    const data = doc.data()
-      return { id: doc.id, ...data }
-    }) 
-    setProducts(productsAdapted)
-  }) .catch(error =>{
-    console.log(error)
-  })
-  .finally(() =>{
+getProducts(categoryId)
+      .then(products =>{
+         setProducts(products) 
+})
+ .catch(error => {
+   console.log(error)
+ })  
+   .finally(() => {
     setLoading(false)
-  })
+   } )
 
-  }, [categoryId])
+
+
+
+
+//const productsRef = categoryId 
+                  //  ? query (collection(db, 'products'), where('category', '==', categoryId))
+                   // : collection(db, 'products')
+
+   //getDocs(productsRef) 
+ // .then(snapshot => {
+      //  console.log(snapshot)
+        //  const productsAdapted = snapshot.docs.map(doc =>{
+        //  const data = doc.data()
+        //    return { id: doc.id, ...data }
+        // }) 
+      //   setProducts(productsAdapted)
+      // }) .catch(error =>{
+      //   return(
+      //     swal(error)
+            
+      //   )
+      // })
+        //.finally(() =>{
+        //  setLoading(false)
+      // })
+      }, [categoryId])
 
 if (loading) {
   return (

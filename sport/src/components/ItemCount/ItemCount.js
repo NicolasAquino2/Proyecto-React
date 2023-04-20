@@ -15,7 +15,7 @@ const ItemCount = ({stock = 0, initial = 1, onAdd})=> {
            setQuantity(quantity - 1)
        }     
    }
-console.log(setQuantity)
+
    return(
        <div className='Counter'>          
             <div className='Controls'>

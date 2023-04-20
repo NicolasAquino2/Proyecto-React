@@ -1,5 +1,4 @@
 import './App.css';
-
 import { CartProvider } from './Context/CartContext';
 import ItemDetailConteiner from './components/ItemDerailContainer/ItemDetailContainer';
 import ItemListConteiner from './components/ItemListConteiner/ItemListConteiner';

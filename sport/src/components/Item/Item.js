@@ -7,7 +7,6 @@ function Item(product) {
   const handleClick = (e) => {
     e.preventDefault()
     e.stopPropagation()
-    console.log('item')
   }
 
   const {id, name, img, price} = product;

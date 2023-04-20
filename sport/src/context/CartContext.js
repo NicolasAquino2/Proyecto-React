@@ -19,9 +19,7 @@ export const CartProvider = ({ children }) => {
         }
       }
       
-      
-
-      const isInCart = (id) => {
+       const isInCart = (id) => {
         return cart.some(prod => prod.id === id)
        
     }

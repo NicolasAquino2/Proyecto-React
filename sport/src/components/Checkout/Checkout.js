@@ -1,5 +1,6 @@
 import React from 'react'
 import ContactForm from '../ContactForm/ContactForm'
+import '../Checkout/Checkout.css'
 import { collection,query, where, documentId, getDocs, addDoc, writeBatch } from 'firebase/firestore'
 import { useCart } from '../../Context/CartContext'
 import { db } from '../../service/firebase/fireconfig'
@@ -75,7 +76,7 @@ docs.forEach(async doc =>{
 if (loading){
   return(
     <div>
-      <h1>Se esta generando su orden...</h1>
+      <h1 className='tituloCheck'>Se esta generando su orden...</h1>
     </div>
   )
 }
@@ -83,7 +84,7 @@ if (loading){
 if(orderId) {
   return(
     <div>
-      <h1>El id de su compra es: {orderId} </h1>
+      <h1 className='tituloCheck'>El id de su compra es: {orderId} </h1>
 
     </div>
   )

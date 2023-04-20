@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-//import { getProductById } from '../../asyncMock'
+import swal from 'sweetalert';
 import {ItemDetail} from '../ItemDetail/ItemDetail'
 import { useParams } from 'react-router-dom'
 import { getDoc, doc } from 'firebase/firestore'  
@@ -23,16 +23,11 @@ const ItemDetailContainer = () => {
             setProduct(productsAdapted)
         })
         .catch(error =>{
-            console.log(error)
+           return console.log(error)
         })
         .finally(() => {
             setLoading(false)
         })
-       // getProductById(ItemId).then(response => {
-         //   setProduct(response)
-       // }).catch(error => {
-       //  console.log(error)
-       // })
     },  [ItemId])
 
     if (loading) {
