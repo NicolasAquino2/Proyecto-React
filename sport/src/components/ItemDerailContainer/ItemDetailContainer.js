@@ -1,34 +1,11 @@
-import { useState, useEffect } from 'react'
-import swal from 'sweetalert';
 import {ItemDetail} from '../ItemDetail/ItemDetail'
 import { useParams } from 'react-router-dom'
-import { getDoc, doc } from 'firebase/firestore'  
-import { db } from '../../service/firebase/fireconfig'
+import { getProductsById } from '../../service/firebase/firestore/products';
+import { useAsync } from '../../hooks/useAsync';
 const ItemDetailContainer = () => {
-    const [product, setProduct] = useState({})
-    const [loading, setLoading] = useState(true)
-
     const { ItemId } = useParams()
-
-
-    useEffect(() => {
-       setLoading(true)
-       const productRef = doc(db, 'products', ItemId)
-
-      getDoc(productRef)
-           .then(snapshot => {
-            console.log(snapshot)
-            const data = snapshot.data()
-            const productsAdapted = {id: snapshot.id, ...data}
-            setProduct(productsAdapted)
-        })
-        .catch(error =>{
-           return console.log(error)
-        })
-        .finally(() => {
-            setLoading(false)
-        })
-    },  [ItemId])
+    const getProductswithId = () => getProductsById(ItemId)
+    const { data: product, error, loading } = useAsync(getProductswithId, [ItemId]) 
 
     if (loading) {
         return (
@@ -43,6 +20,13 @@ const ItemDetailContainer = () => {
           )
       }
 
+      if (error) {
+        return (
+          <div>
+            <h1>hubo un error</h1>
+          </div>
+          )
+      }
     
     return(
         <div >

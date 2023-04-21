@@ -1,4 +1,4 @@
-import { getDocs, collection, query, where } from "firebase/firestore"
+import { getDocs, collection, query, where, getDoc, doc } from "firebase/firestore"
 import { db } from "../fireconfig"
 import { createAdapterProductFromFirestore } from "../../../adapters/createAdapterProductFormFirestore"
 export const getProducts = (categoryId) => {
@@ -14,12 +14,25 @@ export const getProducts = (categoryId) => {
       return createAdapterProductFromFirestore(doc)
      
     }) 
-    return productsAdapted
+    resolve (productsAdapted)
   }).catch(error =>{
-    return error
+    reject(error) 
   })
 
     })
 
+    
+}
+
+export const getProductsById = async (productId) => {
+  const productRef = doc(db, 'products', productId)
+
+  try {
+    const snapshot = await getDoc(productRef)
+    const productsAdapted = createAdapterProductFromFirestore(snapshot)
+    return productsAdapted
+  } catch (error) {
+    return error
+  }
     
 }
