@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+Proyecto de React con Firebase
+Este es un proyecto de React que utiliza Firebase como plataforma de desarrollo en la nube. Con este proyecto podrás:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Crear una aplicación web en tiempo real
+Utilizar Firebase para autenticar usuarios
+Almacenar datos en la nube
+Utilizar Firebase para enviar notificaciones push
+Instalación
+Para poder utilizar este proyecto, necesitarás tener instalado Node.js y NPM en tu computadora. Luego, deberás seguir los siguientes pasos:
 
-## Available Scripts
+Clona este repositorio en tu computadora
+En la carpeta raíz del proyecto, ejecuta el comando npm install para instalar todas las dependencias necesarias
+Crea una cuenta de Firebase en el sitio web de Firebase (https://console.firebase.google.com/)
+Crea un nuevo proyecto en Firebase y configura la autenticación de usuarios y la base de datos
+Copia las credenciales de tu proyecto de Firebase y pégalo en el archivo firebase.js que se encuentra en la carpeta src
+Crea un archivo .env en la carpeta raíz del proyecto y define las siguientes variables de entorno:
+makefile
+Copy code
+REACT_APP_FIREBASE_API_KEY=<API_KEY>
+REACT_APP_FIREBASE_AUTH_DOMAIN=<AUTH_DOMAIN>
+REACT_APP_FIREBASE_PROJECT_ID=<PROJECT_ID>
+REACT_APP_FIREBASE_STORAGE_BUCKET=<STORAGE_BUCKET>
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID=<MESSAGING_SENDER_ID>
+REACT_APP_FIREBASE_APP_ID=<APP_ID>
+Ejecuta el comando npm start para iniciar el servidor local y ver el proyecto en tu navegador
+Uso
+Una vez que hayas instalado y configurado el proyecto, podrás utilizarlo de la siguiente manera:
 
-In the project directory, you can run:
+Utiliza la autenticación de usuarios de Firebase para permitir que los usuarios se registren e inicien sesión
+Utiliza la base de datos de Firebase para almacenar y recuperar datos en tiempo real
+Utiliza Firebase para enviar notificaciones push a los usuarios
+Contribución
+Si quieres contribuir a este proyecto, puedes hacer lo siguiente:
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Realiza un fork del repositorio
+Crea una nueva rama (git checkout -b feature/feature-name)
+Realiza tus cambios y commitea (git commit -am 'Add some feature')
+Realiza un push a la rama (git push origin feature/feature-name)
+Crea un nuevo pull request
